@@ -8,10 +8,10 @@
            <span>学习</span>
          </div>
        </router-link>
-       <router-link :to="{path: '/shequ'}" tag="li">
+       <router-link :to="{path: '/zixun'}" tag="li">
          <div>
            <i class="iconfont icon-shequ" :class="$store.state.pageIndex == 1?'index_active':''"></i>
-           <span>社区</span>
+           <span>资讯</span>
          </div>
        </router-link>
        <router-link :to="{path:'/plan'}" v-if="$store.state.pageIndex==2">

@@ -1,5 +1,5 @@
 <template>
-    <div>社区</div>
+    <div>资讯</div>
 </template>
 
 <script>
