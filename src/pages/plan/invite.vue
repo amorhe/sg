@@ -90,7 +90,7 @@
 </template>
 
 <script>
-  import headers from '../public/top'
+  import headers from '../../components/public/top'
     export default {
       data(){
         return{

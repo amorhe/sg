@@ -11,7 +11,7 @@
         <li @click="tabClick(1)" :class="tabIndex==1?'borderBottom':''">动态</li>
         <li @click="tabClick(2)" :class="tabIndex==2?'borderBottom':''">邀约</li>
       </ul>
-      <div>
+      <div @click="goMessage()">
         <!--<img class="right_icon" src="" alt="">-->
         <p class="iconfont icon-xinxi"></p>
       </div>
@@ -26,9 +26,9 @@
 
           }
         },
-      props:{
-        tabIndex:Number
-      },
+        props:{
+          tabIndex:Number
+        },
         methods:{
           tabClick(index) {
             switch (index) {
@@ -42,6 +42,10 @@
                 this.$router.push({path:'../invite'})
                 break;
             }
+          },
+          //去消息中心
+          goMessage(){
+            this.$router.push({path:'../message'})
           }
         }
     }
