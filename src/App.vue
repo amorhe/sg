@@ -45,4 +45,8 @@ export default {
   .colorY {
     color: #ff9800;
   }
+  button {
+    outline: none;
+    border: none;
+  }
 </style>

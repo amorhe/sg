@@ -47,7 +47,7 @@
                 <div class="view_list_mid">
                   <h3>每日随记</h3>
                   <p class="nowrap">走出沉迷点滴做起好好学</p>
-                  <button>立即加入</button>
+                  <button @click="addPlan()">立即加入</button>
                 </div>
               </div>
             </div>
@@ -110,8 +110,13 @@
         tabbarClick(tabbarNum){
           this.tabbarNum = tabbarNum;
         },
+        //自定义计划
         goCustom(){
           this.$router.push('/custom')
+        },
+      //  官方计划详情
+        addPlan(){
+          this.$router.push('/makePlan')
         }
       }
     }

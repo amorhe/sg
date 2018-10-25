@@ -18,7 +18,7 @@
             </div>
         </div>
 
-        <div>
+        <div @click="goList()">
           <img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3962681492,1891851298&fm=27&gp=0.jpg" alt="">
           <div>
             <div class="message_list_text">
@@ -29,7 +29,7 @@
           </div>
         </div>
 
-        <div>
+        <div @click="goIncite()">
           <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=612545450,2731747183&fm=27&gp=0.jpg" alt="">
           <div>
             <div class="message_list_text">
@@ -71,7 +71,13 @@
           },
         //  消息提醒
           changePage(){
-            this.$router.push({path:'./messageChange'})
+            this.$router.push({path:'/messageChange'})
+          },
+          goList(){
+            this.$router.push({path:'/messageDiscuss'})
+          },
+          goIncite(){
+            this.$router.push({path:'/incite'})
           }
         }
     }

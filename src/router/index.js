@@ -11,6 +11,12 @@ import invite from '@/pages/plan/invite'
 import custom from '@/pages/plan/custom'
 import messageIndex from '@/pages/message/index'
 import messageChange from '@/pages/message/change'
+import messageDiscuss from '@/pages/message/discuss'
+import incite from '@/pages/message/guli'
+import makePlan from '@/pages/plan/makePlan'
+import planRule from '@/pages/plan/planRule'
+import planDynamic from '@/pages/plan/planDynamic'
+import youxuan from '@/pages/plan/youxuan'
 Vue.use(Router)
 
 export default new Router({
@@ -68,8 +74,34 @@ export default new Router({
       component: messageIndex,
     },
     {
-      path:'/messageChange',
+      path:'/messageChange', //变动提醒
       component:messageChange
+    },
+    {
+      path:'/messageDiscuss', //评论你
+      component:messageDiscuss
+    },
+    {
+      path:'/incite',  //鼓励你
+      component:incite
+    },
+    {
+      path:'/makePlan',  //制定计划
+      component:makePlan,
+      children:[
+        {
+          path:'/makePlan/planRule',
+          component:planRule
+        },
+        {
+          path:'/makePlan/planDynamic',
+          component:planDynamic
+        },
+        {
+          path:'/makePlan/youxuan',
+          component:youxuan
+        }
+      ]
     }
   ],
   //跳转页面scrolltop为0
