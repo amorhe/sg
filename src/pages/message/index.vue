@@ -91,12 +91,12 @@
     justify-content: space-between;
     padding: 0 14px;
     background: rgb(248, 248, 248);
-  i {
-    font-size: 20px;
-  }
-  p {
-    font-size: 18px;
-  }
+    i {
+      font-size: 20px;
+    }
+    p {
+      font-size: 18px;
+    }
   }
   .message_list {
     &>div {

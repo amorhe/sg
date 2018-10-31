@@ -17,6 +17,7 @@ import makePlan from '@/pages/plan/makePlan'
 import planRule from '@/pages/plan/planRule'
 import planDynamic from '@/pages/plan/planDynamic'
 import youxuan from '@/pages/plan/youxuan'
+import inviteGroup from '@/pages/plan/inviteGroup'
 Vue.use(Router)
 
 export default new Router({
@@ -90,18 +91,22 @@ export default new Router({
       component:makePlan,
       children:[
         {
-          path:'/makePlan/planRule',
+          path:'planRule',
           component:planRule
         },
         {
-          path:'/makePlan/planDynamic',
+          path:'planDynamic',
           component:planDynamic
         },
         {
-          path:'/makePlan/youxuan',
+          path:'youxuan',
           component:youxuan
         }
       ]
+    },
+    {
+      path:'/inviteGroup',  //邀请组队
+      component:inviteGroup
     }
   ],
   //跳转页面scrolltop为0

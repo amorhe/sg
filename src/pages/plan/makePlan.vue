@@ -1,7 +1,7 @@
 <template>
     <div>
       <div class="header bgGary">
-        <p class="iconfont icon-fanhui plan_back"></p>
+        <p class="iconfont icon-fanhui plan_back" @click="back()"></p>
       </div>
       <div class="planF_box">
         <div>
@@ -9,7 +9,10 @@
             <p class="line_view"></p>
             <h4>坚持锻炼25天</h4>
           </div>
+          <!--播放-->
           <p class="iconfont icon-bofang playBtn"></p>
+          <!--暂停-->
+          <!--<p class="iconfont icon-pause playBtn"></p>-->
         </div>
         <div class="planF_box_mid">
           <div>
@@ -17,11 +20,15 @@
             <p>5.0元</p>
           </div>
           <div>
-            <p>坚持天数</p>
+            <p>坚持</p>
             <p>0/25</p>
           </div>
           <div>
-            <p>鼓励人次</p>
+            <p>参与</p>
+            <p>456</p>
+          </div>
+          <div>
+            <p>鼓励</p>
             <p>0</p>
           </div>
         </div>
@@ -37,27 +44,91 @@
         <router-view></router-view>
       </div>
 
+      <div class="emptys"></div>
+      <!--底部按钮-->
+      <!--<div class="planF_bottom">-->
+        <!--<div @click="personClick">孤独模式</div>-->
+        <!--<div @click="groupClick">-->
+          <!--<p>好友组队模式</p>-->
+          <!--<p class="double">双倍灵钻奖励</p>-->
+        <!--</div>-->
+        <!--<div @click="toInvite">邀战模式</div>-->
+      <!--</div>-->
 
-      <div class="planF_bottom">
-        <div>孤独模式</div>
+      <!--pk等待中-->
+      <!--<div class="planF_bottom_box">-->
+        <!--<div>取消匹配</div>-->
+        <!--<div>-->
+          <!--<p>PK匹配等待中</p>-->
+          <!--<p>23:59:34</p>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <!--组队等待中-->
+      <div class="group_bottom_box">
+        <div><p>取</p><p>消</p></div>
+        <div>继续邀请</div>
         <div>
-          <p>好友组队模式</p>
-          <p class="double">双倍灵钻奖励</p>
+          <p>组队等待接受中</p>
+          <p>23:59:34</p>
         </div>
-        <div>邀战模式</div>
       </div>
+      <payBox :isShow="isShow" @closeAlert="personClick"></payBox>
+      <!--组队模式-->
+      <groupAlert :alertBool="alertBool" @closeBox="groupClick" :title="title1" :content="content1"></groupAlert>
+      <!--pk须知-->
+      <groupAlert :alertBool="pkBool" @closeBox="toInvite" :title="title2" :content="content2"></groupAlert>
     </div>
 </template>
 
 <script>
+  import payBox from '../../components/public/payAlert'
+  import groupAlert from '../../components/public/groupAlert'
     export default {
-        name: "makePlan"
+        name: "makePlan",
+        data(){
+          return {
+            isShow:false,
+            alertBool:false,
+            pkBool:false,
+            isPk:true,
+            title1:'组队须知',
+            title2:'PK须知',
+            content1:'1.组队模式流程：支付诚意金——邀请QQ、微信等好友——对方接受邀请。2.自发起组队24小时内，' +
+              '若无好友接受邀请，系统将取消计划并退回诚意金。3.我已了解组队模式的连坐机制，且已认真阅读并同意其它规则说明。',
+            content2:'1.PK模式流程：支付诚意金——等待系统匹配对手或某用户主动接受邀战。2.自发起PK24小时内，' +
+              '若无用户接受PK，系统将取消计划并退回诚意金。3.应国家政策，PK模式只涉及灵钻盈亏，无论结果胜负诚意金都不互相转移。'
+          }
+        },
+        components:{
+          payBox,groupAlert
+        },
+        methods:{
+          back(){
+            this.$router.push('/plan')
+          },
+          //个人
+          personClick(){
+            this.isShow = ! this.isShow
+          },
+          //组队
+          groupClick(){
+            this.alertBool = !this.alertBool
+          },
+          //pk、邀请
+          toInvite(){
+            if(!this.isPk){
+              this.$router.push('/inviteGroup')
+            }else{
+              this.pkBool = !this.pkBool
+            }
+          }
+        }
     }
 </script>
 
 <style scoped>
   .plan_content {
-    padding: 10px 16px;
     background: #fff;
   }
   .plan_back {
@@ -73,7 +144,7 @@
     height: 200px;
   }
   .planF_box {
-    position: fixed;
+    position: absolute;
     left: 15px;
     top: 170px;
     width: 330px;
@@ -138,7 +209,7 @@
     background: #fff;
   }
   .planF_bottom {
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -170,5 +241,74 @@
     color: #2851f2;
     width: 100%;
     text-align: center;
+  }
+</style>
+<style lang="less" scoped>
+  .planF_bottom_box {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    &>div {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      align-content: center;
+      &>p {
+        width: 100%;
+      }
+      &>p:nth-child(2){
+        color: #e51c23;
+      }
+    }
+    &>div:nth-child(1){
+      background: #d0b0b0;
+    }
+    &>div:nth-child(2){
+      background: #f2f2f2;
+    }
+  }
+  .group_bottom_box {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    &>div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      align-content: center;
+    }
+    &>div:nth-child(1){
+      width: 40px;
+      background: #d0b0b0;
+      font-size: 12px;
+      &>p {
+        width: 100%;
+      }
+    }
+    &>div:nth-child(2){
+      width: 140px;
+      background: #ff9800;
+    }
+    &>div:nth-child(3){
+      width: 180px;
+      background: #f2f2f2;
+      &>p {
+        width: 100%;
+      }
+      &>p:nth-child(2){
+        color: #e51c23;
+      }
+    }
   }
 </style>

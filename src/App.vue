@@ -49,4 +49,8 @@ export default {
     outline: none;
     border: none;
   }
+  .emptys {
+    height: 48px;
+  }
 </style>
+

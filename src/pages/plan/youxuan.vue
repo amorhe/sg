@@ -1,10 +1,16 @@
 <template>
-    <div>优选素材</div>
+    <div>
+      <matter></matter>
+    </div>
 </template>
 
 <script>
+  import matter from '../../components/public/matter'
     export default {
-        name: "youxuan"
+        name: "youxuan",
+        components:{
+          matter
+        }
     }
 </script>
 

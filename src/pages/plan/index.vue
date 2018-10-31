@@ -29,12 +29,12 @@
           <div class="view_div">
             <div class="view_div_top">
               <ul>
-              <li :class="tabbarNum==0?'activeColor':''" @click="tabbarClick(0)">综合</li>
-              <li :class="tabbarNum==1?'activeColor':''" @click="tabbarClick(1)">学习</li>
-              <li :class="tabbarNum==2?'activeColor':''" @click="tabbarClick(2)">健康</li>
-              <li :class="tabbarNum==3?'activeColor':''" @click="tabbarClick(3)">戒除</li>
-              <li :class="tabbarNum==4?'activeColor':''" @click="tabbarClick(4)">阅读</li>
-            </ul>
+                <li :class="tabbarNum==0?'activeColor':''" @click="tabbarClick(0)">综合</li>
+                <li :class="tabbarNum==1?'activeColor':''" @click="tabbarClick(1)">学习</li>
+                <li :class="tabbarNum==2?'activeColor':''" @click="tabbarClick(2)">健康</li>
+                <li :class="tabbarNum==3?'activeColor':''" @click="tabbarClick(3)">戒除</li>
+                <li :class="tabbarNum==4?'activeColor':''" @click="tabbarClick(4)">阅读</li>
+              </ul>
               <p @click="goCustom">
                 <span class="iconfont icon-add"></span>
                 <span>自定义</span>
@@ -116,7 +116,7 @@
         },
       //  官方计划详情
         addPlan(){
-          this.$router.push('/makePlan')
+          this.$router.push('/makePlan/planRule')
         }
       }
     }
