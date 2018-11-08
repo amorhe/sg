@@ -1,10 +1,11 @@
 <template>
     <div>
-      <div class="head_discuss">
-        <i class="iconfont icon-fanhui" @click="back()"></i>
-        <p>邀请组队</p>
-        <div class="empty"></div>
-      </div>
+      <!--<div class="head_discuss">-->
+        <!--<i class="iconfont icon-fanhui" @click="back()"></i>-->
+        <!--<p>邀请组队</p>-->
+        <!--<div class="empty"></div>-->
+      <!--</div>-->
+      <headers :title="title"></headers>
       <!--列表-->
       <div class="shareMenu">
         <div>
@@ -60,12 +61,17 @@
 </template>
 
 <script>
+  import headers from '../../components/public/headers'
     export default {
        data(){
          return {
-            tabNum:0
+            tabNum:0,
+            title:'邀请组队'
          }
        },
+      components:{
+         headers
+      },
       methods:{
         back(){
           this.$router.go(-1)
@@ -78,20 +84,20 @@
 </script>
 
 <style scoped lang="less">
-  .head_discuss {
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 14px;
-    background: rgb(248, 248, 248);
-    i {
-      font-size: 20px;
-    }
-    p {
-      font-size: 18px;
-    }
-  }
+  /*.head_discuss {*/
+    /*height: 48px;*/
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: space-between;*/
+    /*padding: 0 14px;*/
+    /*background: rgb(248, 248, 248);*/
+    /*i {*/
+      /*font-size: 20px;*/
+    /*}*/
+    /*p {*/
+      /*font-size: 18px;*/
+    /*}*/
+  /*}*/
   .shareMenu {
     display: flex;
     justify-content: space-between;

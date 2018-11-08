@@ -4,6 +4,7 @@
       <i class="iconfont icon-fanhui" @click="back()"></i>
       <p>{{title}}</p>
       <a v-show="publish" class="publish">发布</a>
+      <a v-show="record" class="record">记录</a>
     </div>
     <div class="empty"></div>
   </div>
@@ -18,7 +19,8 @@
         },
       props:{
         title:String,
-        publish:Boolean
+        publish:Boolean,
+        record:Boolean
       },
       methods:{
           back(){
@@ -41,11 +43,12 @@
     left: 0;
     width: 100%;
     box-sizing: border-box;
+    line-height: 48px;
     i {
       font-size: 20px;
       color: #AA7575;
       position: absolute;
-      top: 10px;
+      top: 0;
       left: 14px;
     }
     p {
@@ -62,6 +65,11 @@
       text-align: center;
       line-height: 30px;
       font-size: 12px;
+    }
+    .record {
+      position: absolute;
+      top: 0;
+      right: 14px;
     }
   }
 </style>

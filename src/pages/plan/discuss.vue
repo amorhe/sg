@@ -89,6 +89,7 @@
     background: rgb(248,248,248);
     i {
       font-size: 20px;
+      color: #AA7575;
     }
     .head_mid {
       width: 190px;

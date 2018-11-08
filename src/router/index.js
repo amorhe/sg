@@ -19,6 +19,7 @@ import planDynamic from '@/pages/plan/planDynamic'
 import youxuan from '@/pages/plan/youxuan'
 import inviteGroup from '@/pages/plan/inviteGroup'
 import punch from '@/pages/plan/punch'
+import shop from '@/pages/find/shop'
 Vue.use(Router)
 
 export default new Router({
@@ -123,6 +124,11 @@ export default new Router({
       path:'/punch',
       component: punch,
       meta:{index:4}
+    },
+    {
+      path:'/shop',
+      component: shop,
+      meta:{index:2}
     }
   ],
   //跳转页面scrolltop为0

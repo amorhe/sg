@@ -6,11 +6,15 @@ import store from './store/index'
 import axios from 'axios'
 import Mint from 'mint-ui'
 import 'mint-ui/lib/style.css'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import Mui from 'vue-awesome-mui';
 
 Vue.config.productionTip = false;
 Vue.prototype.$ajax = axios;
 Vue.use(Mint)
 Vue.use(Vuex);
+Vue.use(Mui);
+Vue.use(VueAwesomeSwiper)
 
 /* eslint-disable no-new */
 new Vue({

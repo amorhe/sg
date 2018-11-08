@@ -66,21 +66,6 @@
 </script>
 
 <style scoped lang="less">
-  .head_discuss {
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 14px;
-    background: rgb(248, 248, 248);
-    i {
-      font-size: 20px;
-    }
-    p {
-      font-size: 18px;
-    }
-  }
-
   .message_list {
     &>div {
       height: 70px;
