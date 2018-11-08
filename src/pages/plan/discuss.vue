@@ -3,7 +3,7 @@
       <div class="head_discuss">
         <i class="iconfont icon-fanhui" @click="back()"></i>
         <div class="head_mid">
-          <img src="http://t1.27270.com/uploads/tu/201809/1170/9054d6a1cd.jpg" alt="">
+          <img src="http://img2.imgtn.bdimg.com/it/u=764856423,3994964277&fm=26&gp=0.jpg" alt="">
           <p>火花是好还是坏</p>
           <span class="constSpan">关注</span>
           <!--<span class="updateSpan">已关注</span>-->
@@ -14,7 +14,7 @@
         <li>
           <div>
             <div class="view_div_user">
-              <img src="http://t1.27270.com/uploads/tu/201809/1170/9054d6a1cd.jpg" alt="">
+              <img src="http://img2.imgtn.bdimg.com/it/u=764856423,3994964277&fm=26&gp=0.jpg" alt="">
               <div>
                 <p>火花是好还</p>
                 <p class="colorY fontSm">青铜LV1</p>
@@ -40,7 +40,7 @@
            <div v-for="item in 2">
              <div>
                <div>
-                 <img src="http://t1.27270.com/uploads/tu/201809/1174/fb7147568c.jpg" alt="">
+                 <img src="http://img2.imgtn.bdimg.com/it/u=764856423,3994964277&fm=26&gp=0.jpg" alt="">
                  <p>火花是好还是坏</p>
                </div>
                <p class="colorY">青铜LV5</p>

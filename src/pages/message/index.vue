@@ -1,11 +1,11 @@
 <template>
     <div>
-      <div class="head_discuss">
-        <i class="iconfont icon-fanhui" @click="back()"></i>
-        <p>消息通知</p>
-        <div class="empty"></div>
-      </div>
-
+      <!--<div class="head_discuss">-->
+        <!--<i class="iconfont icon-fanhui" @click="back()"></i>-->
+        <!--<p>消息通知</p>-->
+        <!--<div class="empty"></div>-->
+      <!--</div>-->
+      <headers :title="title"></headers>
       <div class="message_list">
         <div @click="changePage()">
             <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1390108980,2985885193&fm=27&gp=0.jpg" alt="">
@@ -56,19 +56,20 @@
 </template>
 
 <script>
+  import headers from '../../components/public/headers'
     export default {
         data(){
           return{
-
+            title:'消息通知'
           }
+        },
+        components:{
+          headers
         },
         mounted(){
 
         },
         methods:{
-          back(){
-            this.$router.go(-1)
-          },
         //  消息提醒
           changePage(){
             this.$router.push({path:'/messageChange'})
@@ -84,20 +85,6 @@
 </script>
 
 <style scoped lang="less">
-  .head_discuss {
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 14px;
-    background: rgb(248, 248, 248);
-    i {
-      font-size: 20px;
-    }
-    p {
-      font-size: 18px;
-    }
-  }
   .message_list {
     &>div {
       height: 70px;

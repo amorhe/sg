@@ -43,7 +43,7 @@
 
             <div class="view_list" v-for="item in 3">
               <div>
-                <img src="http://t1.27270.com/uploads/tu/201809/1336/860c73ba79.jpg" alt="">
+                <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2198746125,2255961738&fm=27&gp=0.jpg" alt="">
                 <div class="view_list_mid">
                   <h3>每日随记</h3>
                   <p class="nowrap">走出沉迷点滴做起好好学</p>

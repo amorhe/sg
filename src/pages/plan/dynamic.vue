@@ -18,9 +18,9 @@
     export default {
       data(){
           return{
-            imgArr:[{'src':'http://t1.27270.com/uploads/tu/201809/1293/9ac2098a9f.jpg'},
-              {'src':'http://t1.27270.com/uploads/tu/201809/1330/691c69c0f2.jpg'},
-              {'src':'http://t1.27270.com/uploads/tu/201809/1170/9054d6a1cd.jpg'}],
+            imgArr:[{'src':'https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3534289497,3677101726&fm=27&gp=0.jpg'},
+              {'src':'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=49764040,3750999451&fm=27&gp=0.jpg'},
+              {'src':'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1293919120,3114443152&fm=27&gp=0.jpg'}],
 
           }
       },

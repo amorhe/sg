@@ -1,6 +1,6 @@
 <template>
-    <div>
-      <div class="backdrop" v-if="isTrue">
+    <div v-if="isTrue">
+      <div class="backdrop">
         <div class="showBox">
           <div class="showBox_top">
             <i class="iconfont icon-cuowu close" @click="closeBox"></i>

@@ -1,10 +1,6 @@
 <template>
     <div>
-      <div class="head_discuss">
-        <i class="iconfont icon-fanhui" @click="back()"></i>
-        <p>变动提醒</p>
-        <div class="empty"></div>
-      </div>
+      <headertop :title="title"></headertop>
 
       <div class="message_list">
         <div>
@@ -51,12 +47,16 @@
 </template>
 
 <script>
+  import headertop from '../../components/public/headers'
     export default {
         data(){
           return{
-
+            title:'变动提醒'
           }
         },
+      components:{
+        headertop
+      },
       methods:{
         back(){
           this.$router.go(-1)

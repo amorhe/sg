@@ -56,7 +56,7 @@
     height: 68px;
   }
   .header {
-    width: 100%;
+    width: 360px;
     height: 68px;
     padding: 20px 15px 0;
     display: flex;

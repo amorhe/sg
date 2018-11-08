@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="makeBox">
       <div class="header bgGary">
         <p class="iconfont icon-fanhui plan_back" @click="back()"></p>
       </div>
@@ -8,6 +8,7 @@
           <div class="invite_content_top">
             <p class="line_view"></p>
             <h4>坚持锻炼25天</h4>
+            <!--<p>物理必修</p>-->
           </div>
           <!--播放-->
           <p class="iconfont icon-bofang playBtn"></p>
@@ -47,12 +48,12 @@
       <div class="emptys"></div>
       <!--底部按钮-->
       <!--<div class="planF_bottom">-->
-        <!--<div @click="personClick">孤独模式</div>-->
+        <!--<div @click="personClick">个人模式</div>-->
         <!--<div @click="groupClick">-->
           <!--<p>好友组队模式</p>-->
           <!--<p class="double">双倍灵钻奖励</p>-->
         <!--</div>-->
-        <!--<div @click="toInvite">邀战模式</div>-->
+        <!--<div @click="toInvite">PK模式</div>-->
       <!--</div>-->
 
       <!--pk等待中-->
@@ -65,25 +66,42 @@
       <!--</div>-->
 
       <!--组队等待中-->
-      <div class="group_bottom_box">
-        <div><p>取</p><p>消</p></div>
-        <div>继续邀请</div>
-        <div>
-          <p>组队等待接受中</p>
-          <p>23:59:34</p>
+      <!--<div class="group_bottom_box">-->
+        <!--<div><p>取</p><p>消</p></div>-->
+        <!--<div>继续邀请</div>-->
+        <!--<div>-->
+          <!--<p>组队等待接受中</p>-->
+          <!--<p>23:59:34</p>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <!--计划进行中-->
+      <div class="planIng">
+        <div class="planIng_left">
+          <i class="iconfont icon-xiaoxi"></i>
+          <p>私信</p>
         </div>
+        <div v-if="!punched">
+          <div @click="punch">发动态打卡</div>
+          <div @click="punchOpen">闪电打卡</div>
+        </div>
+        <div class="punched" v-else>今日已打卡</div>
       </div>
+
       <payBox :isShow="isShow" @closeAlert="personClick"></payBox>
       <!--组队模式-->
       <groupAlert :alertBool="alertBool" @closeBox="groupClick" :title="title1" :content="content1"></groupAlert>
       <!--pk须知-->
       <groupAlert :alertBool="pkBool" @closeBox="toInvite" :title="title2" :content="content2"></groupAlert>
+      <!--打卡成功-->
+      <punchAlert :isPunch="isPunch" @closePunch="punchClose"></punchAlert>
     </div>
 </template>
 
 <script>
   import payBox from '../../components/public/payAlert'
   import groupAlert from '../../components/public/groupAlert'
+  import punchAlert from '../../components/public/punchAlert'
     export default {
         name: "makePlan",
         data(){
@@ -92,6 +110,8 @@
             alertBool:false,
             pkBool:false,
             isPk:true,
+            isPunch:false,
+            punched:false,
             title1:'组队须知',
             title2:'PK须知',
             content1:'1.组队模式流程：支付诚意金——邀请QQ、微信等好友——对方接受邀请。2.自发起组队24小时内，' +
@@ -101,7 +121,7 @@
           }
         },
         components:{
-          payBox,groupAlert
+          payBox,groupAlert,punchAlert
         },
         methods:{
           back(){
@@ -122,12 +142,28 @@
             }else{
               this.pkBool = !this.pkBool
             }
+          },
+          //打卡
+          punch(){
+            this.$router.push('/punch')
+          },
+          punchOpen(){
+            this.isPunch = !this.isPunch
+          },
+          punchClose(punchs){
+            this.punched = punchs;
+            this.isPunch = !this.isPunch
           }
         }
     }
 </script>
 
 <style scoped>
+  .makeBox {
+    position: relative;
+    left: 0;
+    top: 0;
+  }
   .plan_content {
     background: #fff;
   }
@@ -184,7 +220,7 @@
     align-items: center;
   }
   .planF_box_btn {
-    width: 330px;
+    width: 329px;
     height: 40px;
     margin-left: -16px;
     background-color: #9aa2cc;
@@ -287,6 +323,7 @@
       align-items: center;
       flex-wrap: wrap;
       align-content: center;
+      cursor: pointer;
     }
     &>div:nth-child(1){
       width: 40px;
@@ -310,5 +347,57 @@
         color: #e51c23;
       }
     }
+  }
+  .planIng {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: space-between;
+    &>div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      align-content: center;
+      cursor: pointer;
+      height: 100%;
+      &>div:nth-child(1){
+        width: 140px;
+        height: 100%;
+        background: #fdcb04;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &>div:nth-child(2){
+        width: 140px;
+        height: 100%;
+        background: #FF9B6A;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .punched {
+      width: 280px;
+      background: #eae3e3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .planIng_left {
+      width: 80px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #f8f8f8;
+      font-size: 12px;
+    }
+
   }
 </style>

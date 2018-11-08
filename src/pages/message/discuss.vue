@@ -1,10 +1,6 @@
 <template>
   <div>
-    <div class="head_discuss">
-      <i class="iconfont icon-fanhui" @click="back()"></i>
-      <p>评论你</p>
-      <div class="empty"></div>
-    </div>
+    <headertop :title="title"></headertop>
 
     <div class="message_list">
       <div>
@@ -26,19 +22,21 @@
 </template>
 
 <script>
+  import headertop from '../../components/public/headers'
   export default {
     data(){
       return{
-
+        title:'评论你'
       }
+    },
+    components:{
+      headertop
     },
     mounted(){
 
     },
     methods:{
-      back(){
-        this.$router.go(-1)
-      }
+
     }
   }
 </script>

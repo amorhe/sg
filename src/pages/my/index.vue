@@ -6,7 +6,7 @@
       <div class="center_box">
         <div class="center_box_up">
           <div>
-             <img src="http://t1.27270.com/uploads/tu/201809/1415/0f09a53352.jpg" alt="">
+             <img src="http://img5.imgtn.bdimg.com/it/u=2830805145,74531996&fm=26&gp=0.jpg" alt="">
              <div>
                <p>漂流一生</p>
                <p>仙童一级</p>
@@ -37,7 +37,7 @@
 
       <div class="center_list">
           <div>
-            <img src="http://t1.27270.com/uploads/tu/201810/215/73ddd0a011.jpg" alt="">
+            <img src="http://img2.imgtn.bdimg.com/it/u=1308328159,3290673053&fm=26&gp=0.jpg" alt="">
             <p>灵钻领取</p>
           </div>
           <p class="iconfont icon-next"></p>
@@ -45,7 +45,7 @@
 
       <div class="center_list">
         <div>
-          <img src="http://t1.27270.com/uploads/tu/201810/216/97e434aa3a.jpg" alt="">
+          <img src="http://img1.imgtn.bdimg.com/it/u=3125507027,1771900794&fm=26&gp=0.jpg" alt="">
           <p>邀请有礼</p>
         </div>
         <p class="iconfont icon-next"></p>
@@ -53,7 +53,7 @@
 
       <div class="center_list">
         <div>
-          <img src="http://t1.27270.com/uploads/tu/201810/200/7e419b0a16.jpg" alt="">
+          <img src="http://img1.imgtn.bdimg.com/it/u=1223211050,1629218735&fm=26&gp=0.jpg" alt="">
           <p>打卡提醒</p>
         </div>
         <p class="iconfont icon-next"></p>
@@ -61,7 +61,7 @@
 
       <div class="center_list">
         <div>
-          <img src="http://t1.27270.com/uploads/tu/201810/199/b8a03c9592.jpg" alt="">
+          <img src="http://img0.imgtn.bdimg.com/it/u=3749434519,922479171&fm=26&gp=0.jpg" alt="">
           <p>五星好评</p>
         </div>
         <p class="iconfont icon-next"></p>
@@ -69,7 +69,7 @@
 
       <div class="center_list">
         <div>
-          <img src="http://t1.27270.com/uploads/tu/201810/157/408fa8181a.jpg" alt="">
+          <img src="http://img1.imgtn.bdimg.com/it/u=3681884823,2661158030&fm=26&gp=0.jpg" alt="">
           <p>问题汇总</p>
         </div>
         <p class="iconfont icon-next"></p>
@@ -77,7 +77,7 @@
 
       <div class="center_list">
         <div>
-          <img src="http://t1.27270.com/uploads/tu/201810/156/88dc15a74f.jpg" alt="">
+          <img src="http://img4.imgtn.bdimg.com/it/u=2709349131,4385113&fm=26&gp=0.jpg" alt="">
           <p>联系客服</p>
         </div>
         <p class="iconfont icon-next"></p>
