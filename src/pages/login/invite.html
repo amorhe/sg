@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>邀请函</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link href="css/common.css" rel="stylesheet"/>
+    <link href="css/utils.css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/vue-2.5.17.min.js"></script>
+    <style type="text/css">
+        .invite-button {
+            position: relative;
+            width: 20rem;
+            height: 4rem;
+            line-height: 1.5rem;
+            border-radius: 5rem;
+            background-color: rgba(255, 152, 0, 1);
+            color: rgba(255, 255, 255, 1);
+            font-size: 30px;
+            text-align: center;
+            font-family: Roboto;
+            border: 1px solid rgba(187, 187, 187, 1);
+        }
+    </style>
+</head>
+
+<body>
+<div id="app">
+    <div style="background-color: white" class="utils-center mui-content">
+        <img :style="{'width':imageWidth+'px'}" src="image/invite_up.jpg">
+        <div>
+        <button @click="invite" class="invite-button">
+            发起邀请
+        </button>
+        </div>
+        <img :style="{'width':imageWidth+'px'}" src="image/invite_down.jpg">
+    </div>
+</div>
+
+<script type="text/javascript" src="js/mui.min.js"></script>
+<script type="text/javascript" src="js/immersed.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" charset="utf-8">
+    mui.init();
+</script>
+<script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: {
+            screenWidth: document.body.clientWidth,
+            imageWidth: undefined,
+        },
+        mounted: function () {
+            const that = this
+            this.adapterImage()
+            window.onresize = () => {
+                that.adapterImage()
+            }
+        },
+        methods: {
+            adapterImage: function () {
+                const image = new Image()
+                image.src = "image/invite_up.jpg"
+                this.imageWidth = image.width
+
+                window.screenWidth = document.body.clientWidth
+                this.screenWidth = window.screenWidth
+                if (this.screenWidth < image.width) {
+                    this.imageWidth = this.screenWidth
+                } else {
+                    this.imageWidth = image.width
+                }
+            },
+            invite:function () {
+                alert('invite')
+            }
+        }
+    });
+</script>
+</body>
+</html>
