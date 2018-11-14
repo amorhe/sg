@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>个人主页</title>
+  <link rel="stylesheet" href="mdui.min.css"/>
+  <script type="text/javascript" src="mdui.min.js"></script>
   <style>
     .header {
       left: 0px;
@@ -113,7 +115,7 @@
 
     }
 
-    .info-data-div{
+    .info-data-div {
       height: 21px;
       color: rgba(16, 16, 16, 1);
       font-size: 14px;
@@ -123,7 +125,7 @@
       width: 32%;
     }
 
-    .info-data-span{
+    .info-data-span {
       width: 24px;
       height: 30px;
       color: rgba(16, 16, 16, 1);
@@ -131,9 +133,95 @@
       text-align: left;
       font-family: SourceHanSansSC-regular;
     }
+
+    .plan {
+      padding: 20px;
+      padding-right: 50px;
+    }
+
+    .score {
+      width: 72px;
+      height: 72px;
+      line-height: 41px;
+      background-color: rgba(175, 154, 255, 1);
+      color: rgba(255, 255, 255, 1);
+      font-size: 28px;
+      text-align: center;
+      font-family: Roboto;
+      border: 1px solid rgba(187, 187, 187, 1);
+    }
+
+    .score-title {
+      width: 86px;
+      height: 21px;
+      color: rgba(213, 188, 120, 1);
+      font-size: 14px;
+      text-align: left;
+      font-family: SourceHanSansSC-regular;
+    }
+
+    .score-subtitle {
+      width: 108px;
+      height: 21px;
+      color: rgba(16, 16, 16, 1);
+      font-size: 12px;
+      text-align: left;
+      font-family: SourceHanSansSC-regular;
+    }
+
+    .info-new-subtitle {
+      color: rgba(255, 152, 0, 1);
+      font-size: 12px;
+      text-align: left;
+      font-family: SourceHanSansSC-regular;
+    }
+
+    .book {
+      width: 85px;
+      height: 100px;
+      line-height: 100px;
+      border-radius: 5px;
+      background-color: rgba(255, 152, 0, 1);
+      color: rgba(245, 241, 241, 1);
+      font-size: 14px;
+      text-align: center;
+      font-family: Roboto;
+      border: 1px solid rgba(187, 187, 187, 1);
+      display: inline-block;
+      margin: 20px;
+    }
+
+    .planing {
+      width: 120px;
+      height: 120px;
+      line-height: 20px;
+      border-radius: 6px;
+      background-color: rgba(255, 152, 0, 1);
+      text-align: center;
+      border: 1px solid rgba(187, 187, 187, 1);
+      display: inline-block;
+      margin: 20px;
+    }
+
+    .planing p {
+      font-size: 10px;
+    }
+
+    .planing button{
+      width: 48px;
+      height: 22px;
+      line-height: 17px;
+      border-radius: 32px;
+      color: rgba(255, 152, 0, 1);
+      font-size: 12px;
+      text-align: center;
+      font-family: Roboto;
+      border: 1px solid rgba(255, 152, 0, 1);
+
+    }
   </style>
 </head>
-<body style="height: 100%;width: 360px;">
+<body style="height: 100%;width: 480px;">
 <div class="header">
   个人主页
 </div>
@@ -167,8 +255,97 @@
 </div>
 <div class="gap"></div>
 <div class="plan">
-  <div class="plan-left"></div>
-  <div class="plan-right"></div>
+  <div class="plan-left mdui-float-left">
+    <p><span>*</span>已进行计划次数&emsp;&emsp;&emsp;<span>1</span></p>
+    <p><span>*</span>失败的计划次数&emsp;&emsp;&emsp;<span>43</span></p>
+    <p><span>*</span>组队的计划次数&emsp;&emsp;&emsp;<span>3</span></p>
+    <p><span>*</span>PK的计划次数&emsp;&emsp;&emsp;<span>9</span></p>
+  </div>
+  <div class="plan-right mdui-float-right">
+    <div class="score">
+      78
+    </div>
+    <div class="score-title">
+      每满20分升段
+    </div>
+    <div class="score-subtitle">
+      升段将获得等级礼包
+    </div>
+  </div>
 </div>
+<div style="clear: both" class="mdui-tab mdui-tab-full-width" mdui-tab>
+  <a href="#info-new" class="mdui-ripple">动态</a>
+  <a href="#info-plan" class="mdui-ripple">计划</a>
+  <a href="#info-book" class="mdui-ripple">书籍</a>
+</div>
+<div id="info-new">
+  <div class="mdui-card">
+
+    <!-- 卡片头部，包含头像、标题、副标题 -->
+    <div class="mdui-card-header">
+      <img class="mdui-card-header-avatar" src="#"/>
+      <div class="mdui-card-header-title">火花是好还</div>
+      <div class="mdui-card-header-subtitle info-new-subtitle">青铜LV1</div>
+      <div class="mdui-float-right"><p>12天</p>
+        <p>打卡</p></div>
+    </div>
+
+    <!-- 卡片的标题和副标题 -->
+    <div class="mdui-card-primary">
+      <div class="mdui-card-primary-title">
+        <span>#</span>
+        <span>每天坚持背单词30个</span>
+        <span>进度12/20</span>
+        <span>#</span>
+      </div>
+    </div>
+
+    <!-- 卡片的内容 -->
+    <div class="mdui-card-content">
+      只因这夜色太迷人，我没能忍住尘世的诱惑，然而在
+    </div>
+
+    <!-- 卡片的按钮 -->
+    <div class="mdui-card-actions">
+      <button class="mdui-btn mdui-ripple">action 1</button>
+      <button class="mdui-btn mdui-ripple">action 2</button>
+    </div>
+
+  </div>
+</div>
+<div id="info-plan">
+  <div class="planing">
+    <p>组队模式</p>
+    <p>每天背诵单词30个</p>
+    <p class="mdui-float-left">5/30</p>
+    <button class="mdui-float-right">进行中</button>
+  </div>
+  <div class="planing">
+    <p>组队模式</p>
+    <p>每天背诵单词30个</p>
+    <p class="mdui-float-left">5/30</p>
+    <button class="mdui-float-right">进行中</button>
+  </div>
+  <div class="planing">
+    <p>组队模式</p>
+    <p>每天背诵单词30个</p>
+    <p class="mdui-float-left">5/30</p>
+    <button class="mdui-float-right">进行中</button>
+  </div>
+  <div class="planing">
+    <p>组队模式</p>
+    <p>每天背诵单词30个</p>
+    <p class="mdui-float-left">5/30</p>
+    <button class="mdui-float-right">进行中</button>
+  </div>
+</div>
+<div id="info-book">
+  <div class="book">书</div>
+  <div class="book">书</div>
+  <div class="book">书</div>
+  <div class="book">书</div>
+  <div class="book">书</div>
+</div>
+
 </body>
 </html>
