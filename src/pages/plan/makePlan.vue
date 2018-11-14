@@ -145,7 +145,7 @@
           },
           //打卡
           punch(){
-            this.$router.push('/punch')
+            this.$router.push({path:'/punch',query:{text:'动态打卡',place:'输入你的打卡心情或上传打卡凭证，还可获得5灵钻奖励额'}})
           },
           punchOpen(){
             this.isPunch = !this.isPunch

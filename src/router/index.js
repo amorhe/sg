@@ -20,6 +20,11 @@ import youxuan from '@/pages/plan/youxuan'
 import inviteGroup from '@/pages/plan/inviteGroup'
 import punch from '@/pages/plan/punch'
 import shop from '@/pages/find/shop'
+import goodsDetail from '@/pages/find/goodsDetail'
+import address from '@/pages/find/address'
+import exchange from '@/pages/find/exchange'
+import answer from '@/pages/find/answer'
+
 Vue.use(Router)
 
 export default new Router({
@@ -128,6 +133,26 @@ export default new Router({
     {
       path:'/shop',
       component: shop,
+      meta:{index:2}
+    },
+    {
+      path:'/goodsDetail',
+      component:goodsDetail,
+      meta:{index:3}
+    },
+    {
+      path:'/address',
+      component:address,
+      meta:{index:4}
+    },
+    {
+      path:'/exchange',
+      component:exchange,
+      meta:{index:3}
+    },
+    {
+      path:'/answer',
+      component:answer,
       meta:{index:2}
     }
   ],

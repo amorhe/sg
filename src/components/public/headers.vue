@@ -4,7 +4,7 @@
       <i class="iconfont icon-fanhui" @click="back()"></i>
       <p>{{title}}</p>
       <a v-show="publish" class="publish">发布</a>
-      <a v-show="record" class="record">记录</a>
+      <a v-show="record" class="record" @click="goRecord">记录</a>
     </div>
     <div class="empty"></div>
   </div>
@@ -23,9 +23,12 @@
         record:Boolean
       },
       methods:{
-          back(){
-            this.$router.go(-1)
-          }
+        back(){
+          this.$router.go(-1)
+        },
+        goRecord(){
+          this.$router.push('/exchange')
+        }
       }
     }
 </script>
@@ -41,7 +44,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     box-sizing: border-box;
     line-height: 48px;
     i {
@@ -65,6 +68,8 @@
       text-align: center;
       line-height: 30px;
       font-size: 12px;
+      position: absolute;
+      right: 14px;
     }
     .record {
       position: absolute;

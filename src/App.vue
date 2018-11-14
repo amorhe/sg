@@ -46,6 +46,7 @@ export default {
   background: rgb(250,250,250);
   overflow-y: scroll;
   height: 100vh;
+  width: 100vw;
 }
   * {
     margin: 0;

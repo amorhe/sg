@@ -14,7 +14,7 @@
           <p :class="pp==2?'pActive':''" @click="pActive(2)">实物商品</p>
         </div>
         <div class="shopList">
-          <div v-for="item in shopArr">
+          <div v-for="item in shopArr" @click="goDetail()">
             <img :src="item.imgSrc" alt="">
             <h5>{{item.shopName}}</h5>
             <div>
@@ -107,6 +107,9 @@
         methods:{
           pActive(index){
             this.pp = index
+          },
+          goDetail(){
+            this.$router.push('/goodsDetail')
           }
         }
     }

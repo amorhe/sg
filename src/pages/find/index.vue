@@ -40,13 +40,13 @@
             <p>散文、小说、诗歌、情感励志、作文素材，各类秘籍。</p>
           </div>
         </div>
-        <div class="findli">
+        <router-link class="findli" to="/answer">
           <img src="http://img2.imgtn.bdimg.com/it/u=1185178324,2877667798&fm=11&gp=0.jpg" alt="">
           <div>
             <p>解忧反馈</p>
             <p>学习、生活、情感烦恼，请在此处吐露出来吧，我们一定给予回应。</p>
           </div>
-        </div>
+        </router-link>
 
       </div>
     </div>
