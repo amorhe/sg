@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>登录</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link href="css/common.css" rel="stylesheet"/>
+    <link href="css/utils.css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/vue-2.5.17.min.js"></script>
+    <style type="text/css">
+        body {
+            padding-top: 20%;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="app">
+    <div style="background-color: white" class="mui-content">
+        <div class="mui-row">
+            <div class="mui-col-sm-1 mui-col-xs-1"></div>
+            <p>请选择登录或注册方式</p>
+        </div>
+        <div class="mui-row">
+            <div class="utils-center mui-col-sm-4 mui-col-xs-4">
+                <img src="image/qq_login.png">
+                <p>QQ</p>
+            </div>
+            <div class="utils-center mui-col-sm-4 mui-col-xs-4">
+                <img src="image/wx_login.png">
+                <p>微信</p>
+            </div>
+            <div @click="gotoRegister" class="utils-center mui-col-sm-4 mui-col-xs-4">
+                <img src="image/phone_login.png">
+                <p>手机</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div><a href="invite.html">testLink</a></div>
+<br>
+<div><a href="invite_receive.html">testLink</a></div>
+
+<script src="js/mui.min.js"></script>
+<script type="text/javascript" src="js/immersed.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript">
+    mui.init()
+</script>
+<script type="text/javascript">
+    new Vue({
+        el: '#app',
+        data: {},
+        methods: {
+            gotoRegister: function () {
+                window.location.href = "register.html"
+            }
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    function getDeviceInfo() {
+        var str = "",
+            i;
+        str += "设备型号：" + plus.device.model + "\n";
+        str += "设备厂商：" + plus.device.vendor + "\n";
+        str += "IMEI：" + plus.device.imei + "\n";
+        str += "UUID: " + plus.device.uuid + "\n";
+        str += "IMSI：";
+        for (i = 0; i < plus.device.imsi.length; i++) {
+            str += plus.device.imsi[i];
+        }
+        str += "\n";
+        str += "屏幕分辨率：" + plus.screen.resolutionWidth * plus.screen.scale + " x " + plus.screen.resolutionHeight * plus.screen
+            .scale + "\n";
+        str += "DPI：" + plus.screen.dpiX + " x " + plus.screen.dpiY;
+    }
+</script>
+
+
+</body>
+
+</html>

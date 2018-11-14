@@ -1,0 +1,16 @@
+body{
+	background-color: white;
+}
+
+.one-line-input{
+	border-style:none;
+	border-bottom-style:solid;
+	border-bottom-width:thin;
+	border-bottom-color:rgba(255, 152, 0, 1);
+}
+
+.utils-center{
+	text-align: center;
+	vertical-align: middle;
+	margin: 0 auto;
+}
